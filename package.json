@@ -9,7 +9,7 @@
     "client": "cd frontend && npm run dev",
     "build": "cd frontend && npm run build",
     "build:gh-pages": "./scripts/build-gh-pages.sh",
-    "start": "cross-env NODE_ENV=production node backend/index.js",
+    "start": "node backend/index.js",
     "install-all": "npm install && cd frontend && npm install --production=false",
     "postinstall": "cd frontend && npm install --production=false",
     "deploy:github": "./scripts/deploy-to-github.sh",

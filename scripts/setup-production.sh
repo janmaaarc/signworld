@@ -15,12 +15,12 @@ else
     echo "✓ .env file already exists"
 fi
 
-if [ ! -f "client/.env" ]; then
-    echo "Creating client/.env file from client/.env.production template..."
-    cp client/.env.production client/.env
-    echo "✓ Created client/.env file"
+if [ ! -f "frontend/.env" ]; then
+    echo "Creating frontend/.env file from frontend/.env.production template..."
+    cp frontend/.env.production frontend/.env
+    echo "✓ Created frontend/.env file"
 else
-    echo "✓ client/.env file already exists"
+    echo "✓ frontend/.env file already exists"
 fi
 
 echo ""
@@ -31,7 +31,7 @@ echo "   - JWT_SECRET (generate a secure random string)"
 echo "   - AWS credentials (if using file uploads)"
 echo "   - Google Maps API key"
 echo ""
-echo "2. Edit client/.env file and add:"
+echo "2. Edit frontend/.env file and add:"
 echo "   - VITE_API_URL (will be your Render URL)"
 echo "   - VITE_GOOGLE_MAPS_API_KEY"
 echo ""

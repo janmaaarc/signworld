@@ -4,7 +4,7 @@
 echo "Testing production build locally..."
 
 # Build the frontend
-cd client
+cd frontend
 npm run build
 
 # Go back to root
@@ -21,4 +21,4 @@ echo "The frontend will be served from the backend"
 echo "Press Ctrl+C to stop"
 echo ""
 
-node server/index.js
+node backend/index.js

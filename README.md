@@ -62,33 +62,39 @@ GOOGLE_MAPS_API_KEY=your-google-maps-api-key
 CLIENT_URL=http://localhost:5173
 ```
 
-Create `client/.env`:
+Create `frontend/.env`:
 ```env
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=http://localhost:9000/api
 VITE_GOOGLE_MAPS_API_KEY=your-google-maps-api-key
 ```
 
-4. Run the development server:
+4. Create an admin user:
+```bash
+npm run seed:admin
+```
+
+5. Run the development server:
 ```bash
 npm run dev
 ```
 
 This will start:
-- Backend server on http://localhost:5000
+- Backend server on http://localhost:9000
 - Frontend on http://localhost:5173
 
-## Default Login
+## Login Credentials
 
-Since only admins can create new users, you'll need to:
+After running the seed script, use these credentials:
+- **Email:** admin@signcompany.com
+- **Password:** admin123
 
-1. Create an admin user in MongoDB manually or via a seed script
-2. Use the admin account to create owner accounts
+Admins can create additional owner accounts from the dashboard.
 
 ## Project Structure
 
 ```
 sign-company-dashboard/
-├── server/
+├── backend/            # Backend (Node.js + Express)
 │   ├── config/         # Configuration files
 │   ├── controllers/    # Route controllers
 │   ├── middleware/     # Custom middleware
@@ -96,7 +102,7 @@ sign-company-dashboard/
 │   ├── routes/         # API routes
 │   ├── utils/          # Utility functions
 │   └── index.js        # Server entry point
-├── client/
+├── frontend/           # Frontend (React + TypeScript)
 │   ├── src/
 │   │   ├── components/ # Reusable components
 │   │   ├── context/    # React contexts
@@ -105,7 +111,12 @@ sign-company-dashboard/
 │   │   ├── services/   # API services
 │   │   └── types/      # TypeScript types
 │   └── package.json
-└── package.json
+├── docs/               # Documentation
+│   ├── README.md       # Documentation index
+│   └── ...             # Feature and deployment guides
+├── scripts/            # Build and deployment scripts
+├── .env                # Local environment variables
+└── package.json        # Root package manager
 ```
 
 ## API Endpoints
@@ -116,6 +127,17 @@ sign-company-dashboard/
 - `GET /api/users` - Get all users
 - `GET /api/events` - Get all events
 - ... (and more for each module)
+
+## Documentation
+
+Comprehensive documentation is available in the [`docs/`](docs/) folder:
+
+- [Documentation Index](docs/README.md) - Complete documentation guide
+- [Deployment Guide](docs/DEPLOYMENT_GUIDE.md) - Step-by-step deployment instructions
+- [Environment Variables](docs/ENVIRONMENT_VARIABLES.md) - Configuration reference
+- [AI Search Implementation](docs/AI_SEARCH_DESIGN_GUIDE.md) - AI search feature guide
+- [Map Implementation](docs/MAP_IMPLEMENTATION.md) - Interactive map feature
+- And more...
 
 ## Deployment
 

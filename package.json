@@ -2,21 +2,21 @@
   "name": "sign-company-dashboard",
   "version": "1.0.0",
   "description": "Modern internal dashboard for Sign Company Owners",
-  "main": "server/index.js",
+  "main": "backend/index.js",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "PORT=9000 nodemon server/index.js",
-    "client": "cd client && npm run dev",
-    "build": "cd client && npm run build",
+    "server": "cross-env PORT=9000 nodemon backend/index.js",
+    "client": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
     "build:gh-pages": "./scripts/build-gh-pages.sh",
-    "start": "NODE_ENV=production node server/index.js",
-    "install-all": "npm install && cd client && npm install --production=false",
-    "postinstall": "cd client && npm install --production=false",
+    "start": "cross-env NODE_ENV=production node backend/index.js",
+    "install-all": "npm install && cd frontend && npm install --production=false",
+    "postinstall": "cd frontend && npm install --production=false",
     "deploy:github": "./scripts/deploy-to-github.sh",
-    "seed:events": "node server/seedEvents.js",
-    "seed:admin": "node server/seedAdmin.js",
-    "seed:owners": "node server/seedOwners.js",
-    "seed:production-owners": "node server/seedProductionOwners.js",
+    "seed:events": "node backend/seedEvents.js",
+    "seed:admin": "node backend/seedAdmin.js",
+    "seed:owners": "node backend/seedOwners.js",
+    "seed:production-owners": "node backend/seedProductionOwners.js",
     "test": "echo \"No tests specified\" && exit 0"
   },
   "keywords": [
@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.1",
+    "cross-env": "^10.1.0",
     "nodemon": "^3.0.1"
   }
 }

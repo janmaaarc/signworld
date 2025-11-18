@@ -49,9 +49,11 @@ server-output.log
 dev-server.log
 client/client.log
 
-# GitHub Pages
-client/dist/
+# Build output
+frontend/dist/
+backend/dist/
 
-# Environment specific
+# Environment specific (keep .env.example and templates)
 .env.production
 .env.development
+.env

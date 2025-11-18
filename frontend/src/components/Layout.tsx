@@ -76,9 +76,11 @@ const Layout = () => {
             </div>
           </div>
 
-          {/* Owner Portal Title */}
+          {/* Portal Title */}
           <div className="px-4 py-4 border-b border-gray-200">
-            <h1 className="text-lg font-semibold text-gray-900 text-center">Owner Portal</h1>
+            <h1 className="text-lg font-semibold text-gray-900 text-center">
+              {user?.role === 'admin' ? 'Admin Portal' : 'Owner Portal'}
+            </h1>
           </div>
 
           {/* Navigation */}

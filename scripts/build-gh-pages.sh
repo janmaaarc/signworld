@@ -7,8 +7,8 @@ echo "Building Sign World Dashboard for GitHub Pages..."
 export GITHUB_PAGES=true
 export VITE_API_URL=https://sign-company.onrender.com
 
-# Navigate to client directory
-cd client
+# Navigate to frontend directory
+cd frontend
 
 # Install dependencies
 echo "Installing dependencies..."

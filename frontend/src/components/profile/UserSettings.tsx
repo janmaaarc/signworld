@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { validateUserSettings, ValidationError } from '../../utils/validation';
+import { validateUserSettings, type ValidationError } from '../../utils/validation';
 import { showSuccess, showError, showLoading, dismissToast } from '../../utils/toast';
 import {
   UserIcon,
